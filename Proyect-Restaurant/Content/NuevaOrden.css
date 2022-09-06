@@ -1,0 +1,22 @@
+﻿
+.btn-productos{
+    margin: 50px ;   
+}
+
+.quantity {
+    margin: 10px;
+}
+
+
+.input-qty {
+    margin: 20px auto;
+    
+    width: 100px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.image-drink {
+    width: 150px;
+    height: 150px;
+}

@@ -1,0 +1,10 @@
+﻿.editarUsuario {
+    color: blue;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.eliminarUsuario {
+    color: orangered;
+    font-size: 20px;
+}

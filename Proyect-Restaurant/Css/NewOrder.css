@@ -1,0 +1,48 @@
+﻿.formulario {
+    
+}
+fieldset {
+    border-width: 2px;
+    border-style: groove;
+    border-image: initial;
+    border-color: black;
+    width: 95%;
+    margin-top: 2rem;
+}
+    
+
+
+legend {
+    margin: 1rem;
+    font-size: 1.8rem;
+    color: black;
+}
+
+label {
+    margin-left:2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+}
+
+
+
+input, textarea, select {
+    margin-left:2rem;
+    padding: .5rem;
+    width: 100%;
+    display: block;
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+textarea {
+    height: 20rem;
+}
+
+input::placeholder {
+    font-size: 1.2rem;
+}
+

@@ -1,0 +1,10 @@
+﻿.editarBebida {
+    color: blue;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.eliminarBebida {
+    color: orangered;
+    font-size: 20px;
+}
