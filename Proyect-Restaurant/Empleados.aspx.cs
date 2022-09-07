@@ -1,10 +1,12 @@
 ﻿using Application.Helpers;
 using Application.Models;
+using Newtonsoft.Json;
 using Proyect_Restaurant.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.ApplicationServices;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -14,21 +16,39 @@ namespace Proyect_Restaurant
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+
+            if (!Page.IsPostBack)
             {
-                if (String.IsNullOrEmpty((string)Session["Token"]))
+                try
+                {
+                    if (String.IsNullOrEmpty((string)Session["Token"]))
+                    {
+                        Response.Redirect("~/Default.aspx");
+                    }
+                    else
+                    {
+                        token.Value = Session["Token"].ToString();
+                    }
+
+                    //Obtengo los roles de la base de datos a traves de la Api
+                    var rolService = new RolService();
+                    var roles = rolService.ObtenerRoles(token.Value);
+
+                    //Transformo un Json a un Objeto, dentro de la deserealizacion se convierte en una lista del tipo roles de un string
+                    var listaRoles = JsonConvert.DeserializeObject< List < Roles >> (roles.ToString());
+
+                    foreach(var x in listaRoles)
+                    {
+                        RolDrop.Items.Add(new ListItem(x.NombreRol, x.IdRol.ToString()));
+                    }
+                }
+                catch (Exception ex)
                 {
                     Response.Redirect("~/Default.aspx");
                 }
-                else
-                {
-                    token.Value = Session["Token"].ToString();
-                }
+
             }
-            catch (Exception ex)
-            {
-                Response.Redirect("~/Default.aspx");
-            }
+            
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)

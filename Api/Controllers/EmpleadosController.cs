@@ -23,6 +23,9 @@ namespace Api.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class EmpleadosController:ApiController
     {
+        // Guarda los errores en un txt para poder determinar el problema
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public AllContext db;
 
         public EmpleadosController()
@@ -61,8 +64,9 @@ namespace Api.Controllers
                     return Ok("Se guardo");
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                log.Error(ex);
                 return Ok("Algo salio mal");
             }
             return Ok("Algo salio mal");
@@ -83,8 +87,9 @@ namespace Api.Controllers
                     return Ok("Se guardo");
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                log.Error(ex);
                 return Ok("Algo salio mal");
             }
             return Ok("Algo salio mal");
@@ -107,8 +112,9 @@ namespace Api.Controllers
                     return Ok("Se elimino Correctamente");
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                log.Error(ex);
                 return Ok("Algo salio mal");
             }
             return Ok("Algo salio mal");

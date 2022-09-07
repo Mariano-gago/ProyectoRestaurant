@@ -66,10 +66,6 @@
                       <div class="col-md- form-group">
                         <asp:Label ID="Rol" runat="server" Text="Roles"></asp:Label>
                         <asp:DropDownList ID="RolDrop" class="form-control" runat="server">
-                            <asp:ListItem Text ="Seleccionar" Value="0" disable/>
-                            <asp:ListItem Text ="Administrador" Value="1"/>
-                            <asp:ListItem Text ="Salon" Value="2"/>
-                            <asp:ListItem Text ="Cocina" Value="3"/>
                         </asp:DropDownList>
                     </div>                    
                 </div>

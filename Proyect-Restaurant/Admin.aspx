@@ -18,6 +18,13 @@
              </a>
             </div>
 
+            <div class="col-lg-3">             
+             <a href="Sections/Roles/AdministrarRoles.aspx" class="box col-lg-3 col-md-3">                 
+                 <img class="icons" src="Img/UserIcon.png" />
+                <h2 class="title">Roles</h2>    
+             </a>
+            </div>
+
             <div class="col-lg-3">
                 <a class="box col-lg-3 col-md-3" href="Sections/Entradas/AdministrarEntradas.aspx">
                     <img class="icons" src="Img/entradas.jpg" />
@@ -32,12 +39,7 @@
                 </a>
             </div>
 
-            <div class="col-lg-3">
-                <a class="box col-lg-3 col-md-3" href="*">
-                    <img class="icons" src="Img/postre.png" />
-                    <h2 class="title">Postre</h2>    
-                </a>
-            </div>
+            
        </div>
         <div class="row">
             <div class="col-lg-3">
@@ -45,6 +47,12 @@
                     <img class="icons" src="Img/bebidas.png" />
                     <h2 class="title">Bebidas</h2>
                         
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <a class="box col-lg-3 col-md-3" href="*">
+                    <img class="icons" src="Img/postre.png" />
+                    <h2 class="title">Postre</h2>    
                 </a>
             </div>
         </div>
