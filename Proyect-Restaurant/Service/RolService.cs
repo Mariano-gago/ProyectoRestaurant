@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Proyect_Restaurant.Service
 {
-    public class RolesService: BaseApiService
+    public class RolService: BaseApiService
     {
         public object GuardarRol(Roles Rol, string token)
         {
@@ -24,6 +24,12 @@ namespace Proyect_Restaurant.Service
         {
             string ContollerMethodName = "Roles/EliminarRol";
             return base.DeleteToApi(ContollerMethodName, id, token);
+        }
+
+        public object ObtenerRoles(string token)
+        {
+            string ContollerMethodName = "Roles/ObtenerRoles";
+            return base.GetToApi(ContollerMethodName, token);
         }
     }
 }

@@ -61,7 +61,7 @@
                         <li><a runat="server" href="~/Admin">Inicio</a></li>
                         <li><a runat="server" href="Waiter.aspx">Salon</a></li>
                         <li><a runat="server" href="#">Pedidos</a></li>                       
-                        <li><a runat="server" href="~/Default">Cerrar Sesion</a></li>
+                        <asp:LinkButton ID="CerrarSesionBtn" runat="server" OnClick="CerrarSesion">Cerrar Sesion</asp:LinkButton>
                     </ul>
                 </div>
             </div>

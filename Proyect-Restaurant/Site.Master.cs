@@ -13,5 +13,13 @@ namespace Proyect_Restaurant
         {
 
         }
+
+        protected void CerrarSesion(object sender, EventArgs e)
+        {
+            //Cuando se clikea en cerrar Sesion, se destruye la cookie y redirige al Login
+            Response.Cookies["Token"].Expires = DateTime.Now.AddDays(-1);
+            Response.Redirect("~/");
+
+        }
     }
 }

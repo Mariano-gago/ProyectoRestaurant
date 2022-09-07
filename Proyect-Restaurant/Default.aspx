@@ -26,7 +26,8 @@
 
                     <div id="remember" class="checkbox">
                         <label class="checkbox-label" style="color:white;">
-                            <input type="checkbox" value="remember-me"/>Recuerdame
+                            
+                            <asp:CheckBox ID="RecuerdameCheck" runat="server" />Recuerdame
                         </label>
                     </div>
                     <asp:Button ID="btnIniciar" class="btn btn-lg btn-primary btn-block btn-signin" runat="server" Text="Iniciar Sesion" OnClick="btnIniciar_Click" />

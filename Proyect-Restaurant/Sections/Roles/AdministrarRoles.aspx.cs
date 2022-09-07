@@ -38,7 +38,7 @@ namespace Proyect_Restaurant
 
             var Rol = new Roles();
 
-            var guardarRol = new RolesService();
+            var guardarRol = new RolService();
 
             Rol.NombreRol = nombre;            
             Rol.Activo = activo;
@@ -59,7 +59,7 @@ namespace Proyect_Restaurant
 
             var Rol = new Roles();
 
-            var editarRol = new RolesService();
+            var editarRol = new RolService();
 
             Rol.IdRol = id;
             Rol.NombreRol = nombre;           
@@ -70,7 +70,7 @@ namespace Proyect_Restaurant
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            var eliminarRol = new RolesService();
+            var eliminarRol = new RolService();
             int id = Convert.ToInt16(idRol.Value);
             eliminarRol.EliminarRol(id, token.Value);
         }
