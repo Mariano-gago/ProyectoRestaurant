@@ -11,8 +11,34 @@ namespace Proyect_Restaurant.Service
 {
     public class BaseApiService
     {
+
+
+
+
+
         //Traigo la URL desde el webconfig de la Api
         private string apiUrl { get { return ConfigurationManager.AppSettings["apiUrl"]; } }
+
+        protected string GetToApi(string controllerMethodUrl, string token)
+        {
+            HttpClient httpClient = new HttpClient();
+            //Variable response de tipo Http...
+            HttpResponseMessage response;
+
+            // Creacion de ruta
+            string url = string.Format("{0}/{1}", apiUrl, controllerMethodUrl);
+
+            //Consumiendo la api
+            httpClient.DefaultRequestHeaders.Add("Authorization", token);
+            response = httpClient.GetAsync(url).Result;
+            response.EnsureSuccessStatusCode();
+            return response.Content.ReadAsStringAsync().Result;
+        }
+
+
+
+
+
 
         protected HttpResponseMessage PostToApi(string controllerMethodUrl, object BodyParameters, string token)
         {

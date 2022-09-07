@@ -23,6 +23,9 @@ namespace Api.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class RolesController:ApiController
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+
         public AllContext db;
 
         public RolesController()
@@ -34,6 +37,8 @@ namespace Api.Controllers
         [Route("ObtenerRoles")]
         public IHttpActionResult ObtenerRoles()
         {
+           
+
             var rol = db.Roles.AsNoTracking().Where(x => x.Activo == true).ToList();
 
             return Ok(rol);
@@ -61,8 +66,9 @@ namespace Api.Controllers
                     return Ok("Se guardo");
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                log.Error(ex);
                 return Ok("Algo salio mal");
             }
             return Ok("Algo salio mal");
@@ -107,8 +113,9 @@ namespace Api.Controllers
                     return Ok("Se elimino Correctamente");
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                log.Error(ex);
                 return Ok("Algo salio mal");
             }
             return Ok("Algo salio mal");

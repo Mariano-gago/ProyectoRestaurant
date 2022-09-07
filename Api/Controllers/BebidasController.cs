@@ -23,6 +23,8 @@ namespace Api.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class BebidasController:ApiController
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public AllContext db;
 
         public BebidasController()
@@ -61,8 +63,9 @@ namespace Api.Controllers
                     return Ok("Se guardo");
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                log.Error(ex);
                 return Ok("Algo salio mal");
             }
             return Ok("Algo salio mal");
@@ -83,8 +86,9 @@ namespace Api.Controllers
                     return Ok("Se guardo");
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                log.Error(ex);
                 return Ok("Algo salio mal");
             }
             return Ok("Algo salio mal");
@@ -107,8 +111,9 @@ namespace Api.Controllers
                     return Ok("Se elimino Correctamente");
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                log.Error(ex);
                 return Ok("Algo salio mal");
             }
             return Ok("Algo salio mal");
